@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import { Code, Globe, Shield, BarChart, Rocket, Server, Smartphone, PenTool, Database, ArrowDown } from 'lucide-react';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Code, Globe, Shield, BarChart, Rocket, Server, Smartphone, PenTool, Database } from 'lucide-react';
+import { PageRoute } from '../types';
 
 const ServicesPage: React.FC = () => {
-  const location = useLocation();
-
   const services = [
     {
       id: 'software',
@@ -71,27 +70,6 @@ const ServicesPage: React.FC = () => {
     }
   ];
 
-  // Handle scrolling to section if passed via state
-  useEffect(() => {
-    if (location.state && (location.state as any).scrollTo) {
-      const elementId = (location.state as any).scrollTo;
-      const element = document.getElementById(elementId);
-      if (element) {
-        // Small delay to ensure rendering is complete and to provide a nice UX
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      }
-    }
-  }, [location]);
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <div className="bg-white min-h-screen pt-20 pb-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -106,13 +84,13 @@ const ServicesPage: React.FC = () => {
         <div className="mb-16 overflow-x-auto pb-4 scrollbar-hide">
           <div className="flex flex-wrap justify-center gap-2 min-w-max px-2">
             {services.map((service) => (
-              <button
+              <Link
                 key={service.id}
-                onClick={() => scrollToSection(service.id)}
+                to={`#${service.id}`}
                 className="px-4 py-2 bg-slate-100 hover:bg-indigo-100 text-slate-700 hover:text-indigo-700 rounded-full text-sm font-medium transition-colors border border-slate-200"
               >
                 {service.title}
-              </button>
+              </Link>
             ))}
           </div>
         </div>
@@ -162,12 +140,12 @@ const ServicesPage: React.FC = () => {
                     Our AI Consultant is available 24/7 to help you figure out the best solution for your business needs. 
                     Alternatively, our human experts are just a message away.
                 </p>
-                <button 
-                  onClick={() => window.location.hash = '#/contact'}
-                  className="px-8 py-3 bg-white text-indigo-900 rounded-full font-bold hover:bg-indigo-50 transition-colors"
+                <Link 
+                  to={PageRoute.CONTACT}
+                  className="inline-block px-8 py-3 bg-white text-indigo-900 rounded-full font-bold hover:bg-indigo-50 transition-colors"
                 >
                     Contact an Expert
-                </button>
+                </Link>
              </div>
         </div>
       </div>

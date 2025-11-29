@@ -66,8 +66,7 @@ const Home: React.FC = () => {
                 <h3 className="text-xl font-bold text-slate-900 mb-2">{service.title}</h3>
                 <p className="text-slate-600 mb-4">{service.desc}</p>
                 <Link 
-                  to={PageRoute.SERVICES} 
-                  state={{ scrollTo: service.id }}
+                  to={`${PageRoute.SERVICES}#${service.id}`}
                   className="text-indigo-600 font-medium flex items-center group-hover:gap-2 transition-all"
                 >
                   Learn more <ArrowRight className="h-4 w-4 ml-1" />

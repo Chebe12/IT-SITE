@@ -40,12 +40,7 @@ const AIChatbot: React.FC = () => {
     setIsLoading(true);
 
     try {
-      const apiKey = process.env.API_KEY || '';
-      if (!apiKey) {
-        throw new Error("API Key missing");
-      }
-
-      const ai = new GoogleGenAI({ apiKey });
+      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
       
       const systemInstruction = `You are 'Nova', a helpful and professional sales representative and technical advisor for 'NovaTech Solutions'. 
       NovaTech offers: Custom Software Development, SaaS Product Engineering, Digital Marketing, Cloud Infrastructure, and IT Consultation.

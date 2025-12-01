@@ -10,6 +10,7 @@ const Navbar: React.FC = () => {
   const navLinks = [
     { name: 'Home', path: PageRoute.HOME },
     { name: 'Services', path: PageRoute.SERVICES },
+    { name: 'Portfolio', path: PageRoute.PORTFOLIO },
     { name: 'About', path: PageRoute.ABOUT },
     { name: 'Contact', path: PageRoute.CONTACT },
   ];

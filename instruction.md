@@ -33,22 +33,28 @@ This application uses the Google Gemini API for the chatbot feature.
 
 ## Running the App
 
-**IMPORTANT**: Do not open `index.html` directly in your browser. You must start the local development server to resolve module imports.
+**IMPORTANT**: 
+You **cannot** open `index.html` directly (double-click).
+You **cannot** use the "Live Server" extension in VS Code.
+You **must** use the Vite development server included in the project.
 
 Start the development server:
 
 ```bash
 npm run dev
-# OR
-npm start
 ```
 
-The application should now be running at `http://localhost:5173`. Open this URL in your browser.
+The application should automatically open in your browser at `http://localhost:5173`.
 
 ## Troubleshooting
 
-- **Error: Failed to resolve module specifier "react/jsx-runtime"**: This means you are opening the HTML file directly instead of using `npm run dev`.
-- **Error: process is not defined**: Ensure you are running the latest version of the code provided, which handles environment variables via Vite.
+- **Error: Failed to resolve module specifier "react/jsx-runtime"**: 
+  - This means you are not running the Vite server.
+  - Close the tab, go to your terminal, and make sure `npm run dev` is running.
+  - Open the URL shown in the terminal (usually http://localhost:5173).
+
+- **Error: process is not defined**: 
+  - Ensure you are running the latest version of the code provided, which handles environment variables via Vite.
 
 ## Build for Production
 

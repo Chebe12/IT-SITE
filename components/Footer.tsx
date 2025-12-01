@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Cpu, Twitter, Linkedin, Github, Mail, Check, Loader2 } from 'lucide-react';
+import { PageRoute } from '../types';
 
 const Footer: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -45,11 +47,11 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-sm font-bold text-white tracking-wider uppercase mb-6">Services</h3>
             <ul className="space-y-3 text-sm">
-              <li><a href="#" className="text-slate-400 hover:text-indigo-400 transition-colors">Custom Software</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-indigo-400 transition-colors">Cloud Solutions</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-indigo-400 transition-colors">Digital Marketing</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-indigo-400 transition-colors">Cybersecurity</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-indigo-400 transition-colors">Data Analytics</a></li>
+              <li><Link to={PageRoute.SERVICES} className="text-slate-400 hover:text-indigo-400 transition-colors">Custom Software</Link></li>
+              <li><Link to={PageRoute.SERVICES} className="text-slate-400 hover:text-indigo-400 transition-colors">Cloud Solutions</Link></li>
+              <li><Link to={PageRoute.SERVICES} className="text-slate-400 hover:text-indigo-400 transition-colors">Digital Marketing</Link></li>
+              <li><Link to={PageRoute.SERVICES} className="text-slate-400 hover:text-indigo-400 transition-colors">Cybersecurity</Link></li>
+              <li><Link to={PageRoute.SERVICES} className="text-slate-400 hover:text-indigo-400 transition-colors">Data Analytics</Link></li>
             </ul>
           </div>
 
@@ -57,10 +59,10 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-sm font-bold text-white tracking-wider uppercase mb-6">Company</h3>
             <ul className="space-y-3 text-sm">
-              <li><a href="#" className="text-slate-400 hover:text-indigo-400 transition-colors">About Us</a></li>
+              <li><Link to={PageRoute.ABOUT} className="text-slate-400 hover:text-indigo-400 transition-colors">About Us</Link></li>
+              <li><Link to={PageRoute.PORTFOLIO} className="text-slate-400 hover:text-indigo-400 transition-colors">Portfolio</Link></li>
               <li><a href="#" className="text-slate-400 hover:text-indigo-400 transition-colors">Careers</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-indigo-400 transition-colors">Blog</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-indigo-400 transition-colors">Contact</a></li>
+              <li><Link to={PageRoute.CONTACT} className="text-slate-400 hover:text-indigo-400 transition-colors">Contact</Link></li>
               <li><a href="#" className="text-slate-400 hover:text-indigo-400 transition-colors">Privacy Policy</a></li>
             </ul>
           </div>
@@ -110,6 +112,7 @@ const Footer: React.FC = () => {
             &copy; {new Date().getFullYear()} NovaTech Solutions Inc. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-slate-500">
+            <Link to={PageRoute.ADMIN} className="hover:text-indigo-400 transition-colors">Admin Login</Link>
             <a href="#" className="hover:text-slate-300 transition-colors">Terms of Service</a>
             <a href="#" className="hover:text-slate-300 transition-colors">Cookie Policy</a>
           </div>

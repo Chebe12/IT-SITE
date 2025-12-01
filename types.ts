@@ -17,6 +17,26 @@ export interface Testimonial {
   avatar: string;
 }
 
+export interface PortfolioItem {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  imageUrl: string;
+  link?: string;
+  tags: string[];
+}
+
+export interface SiteContent {
+  heroTitle: string;
+  heroSubtitle: string;
+  contactEmail: string;
+  contactPhone: string;
+  statsProjects: string;
+  statsRetention: string;
+  statsYears: string;
+}
+
 export interface ChatMessage {
   id: string;
   role: 'user' | 'model';
@@ -28,5 +48,7 @@ export enum PageRoute {
   HOME = '/',
   SERVICES = '/services',
   CONTACT = '/contact',
-  ABOUT = '/about'
+  ABOUT = '/about',
+  PORTFOLIO = '/portfolio',
+  ADMIN = '/admin'
 }

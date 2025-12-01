@@ -19,9 +19,30 @@
           scrollbar-width: none;
       }
     </style>
-  </head>
+    <script>
+      // Check if running directly from file system
+      if (window.location.protocol === 'file:') {
+        alert('CRITICAL ERROR: You are opening this file directly (file://). You must run "npm run dev" in your terminal and open the localhost URL provided to view this application.');
+        document.body.innerHTML = '<div style="padding: 2rem; color: red; font-family: sans-serif;"><h1>Setup Error</h1><p>You cannot open this file directly. Please check the instructions.md file for how to run the development server.</p><pre>1. Open terminal\n2. Run: npm install\n3. Run: npm run dev\n4. Open http://localhost:5173</pre></div>';
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
+    "vite": "https://aistudiocdn.com/vite@^7.2.6",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0"
+  }
+}
+</script>
+</head>
   <body class="bg-slate-50 text-slate-900 antialiased">
     <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
